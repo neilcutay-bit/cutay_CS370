@@ -46,6 +46,13 @@ class Scanner {
 			case '}': addToken(RIGHT_BRACE); break;
 			case ',': addToken(COMMA); break;
 			case '.': addToken(DOT); break;
+			case '-': addToken(MINU); break;
+			case '+': addToken(PLUS); break;
+			case ';': addToken(SEMICOLON); break;
+			case '*': addToken(STAR); break;
+			default:
+				Lox.error(line, "Unexpected Character");
+				break;
 			case '!':
 				if (match('=')) {
 					addToken(BANG_EQUAL);
